@@ -36,6 +36,7 @@ This bundle contains support for 20+ different providers:
 * Soundcloud
 * Stack Exchange,
 * Stereomood,
+* Stripe,
 * Toshl,
 * Twitch,
 * Twitter,
