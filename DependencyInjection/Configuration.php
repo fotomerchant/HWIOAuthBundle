@@ -55,6 +55,7 @@ class Configuration implements ConfigurationInterface
             'sensio_connect',
             'sina_weibo',
             'soundcloud',
+            'stripe',
             'stack_exchange',
             'toshl',
             'twitch',
