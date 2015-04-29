@@ -23,7 +23,12 @@ class StripeResourceOwner extends GenericOAuth2ResourceOwner
     /**
      * {@inheritDoc}
      */
-    protected $paths = array();
+    protected $paths = array(
+        'identifier' => 'id',
+        'realname'   => 'display_name',
+        'nickname'   => 'display_name',
+        'email'      => 'email'
+    );
 
     /**
      * {@inheritDoc}
@@ -33,10 +38,14 @@ class StripeResourceOwner extends GenericOAuth2ResourceOwner
         parent::configureOptions($resolver);
 
         $resolver->setDefaults(array(
-            'authorization_url' => 'https://connect.stripe.com/oauth/authorize',
-            'access_token_url'  => 'https://connect.stripe.com/oauth/token',
-            'revoke_token_url'  => 'https://connect.stripe.com/oauth/deauthorize',
-            'infos_url'         => null
+            'authorization_url'         => 'https://connect.stripe.com/oauth/authorize',
+            'access_token_url'          => 'https://connect.stripe.com/oauth/token',
+            'revoke_token_url'          => 'https://connect.stripe.com/oauth/deauthorize',
+            'infos_url'                 => 'https://api.stripe.com/v1/account',
+
+            'user_response_class'       => '\HWI\Bundle\OAuthBundle\OAuth\Response\StripeConnectUserResponse',
+
+            'scope'                     => 'read_write'
         ));
     }
 }
