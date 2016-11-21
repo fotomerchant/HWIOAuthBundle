@@ -63,6 +63,7 @@ class Configuration implements ConfigurationInterface
             'slack',
             'spotify',
             'soundcloud',
+            'stripe',
             'stack_exchange',
             'strava',
             'toshl',
