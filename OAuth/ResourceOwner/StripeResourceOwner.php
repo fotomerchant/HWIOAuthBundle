@@ -11,7 +11,7 @@
 
 namespace HWI\Bundle\OAuthBundle\OAuth\ResourceOwner;
 
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * StripeResourceOwner
@@ -25,27 +25,27 @@ class StripeResourceOwner extends GenericOAuth2ResourceOwner
      */
     protected $paths = array(
         'identifier' => 'id',
-        'realname'   => 'display_name',
-        'nickname'   => 'display_name',
-        'email'      => 'email'
+        'realname' => 'display_name',
+        'nickname' => 'display_name',
+        'email' => 'email'
     );
 
     /**
      * {@inheritDoc}
      */
-    protected function configureOptions(OptionsResolverInterface $resolver)
+    protected function configureOptions(OptionsResolver $resolver)
     {
         parent::configureOptions($resolver);
 
         $resolver->setDefaults(array(
-            'authorization_url'         => 'https://connect.stripe.com/oauth/authorize',
-            'access_token_url'          => 'https://connect.stripe.com/oauth/token',
-            'revoke_token_url'          => 'https://connect.stripe.com/oauth/deauthorize',
-            'infos_url'                 => 'https://api.stripe.com/v1/account',
+            'authorization_url' => 'https://connect.stripe.com/oauth/authorize',
+            'access_token_url' => 'https://connect.stripe.com/oauth/token',
+            'revoke_token_url' => 'https://connect.stripe.com/oauth/deauthorize',
+            'infos_url' => 'https://api.stripe.com/v1/account',
 
-            'user_response_class'       => '\HWI\Bundle\OAuthBundle\OAuth\Response\StripeConnectUserResponse',
+            'user_response_class' => '\HWI\Bundle\OAuthBundle\OAuth\Response\StripeConnectUserResponse',
 
-            'scope'                     => 'read_write'
+            'scope' => 'read_write'
         ));
     }
 }
