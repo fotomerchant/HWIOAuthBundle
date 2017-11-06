@@ -50,6 +50,7 @@ This bundle contains support for 58 different providers:
 * Stack Exchange,
 * Stereomood,
 * Strava,
+* Stripe,
 * Toshl,
 * Trakt,
 * Trello,
