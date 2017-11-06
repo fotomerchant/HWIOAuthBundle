@@ -38,7 +38,7 @@ class PLICResourceOwner extends GenericOAuth2ResourceOwner
     /**
      * {@inheritdoc}
      */
-    protected function httpRequest($url, $content = null, array $headers = [], $method = null)
+    protected function httpRequest($url, $content = null, $headers = array(), $method = null)
     {
         $headers['Accept'] = 'application/vnd.plic.io.v2+json';
 
