@@ -63,6 +63,7 @@ hwi_oauth:
 - [Mail.ru](resource_owners/mailru.md)
 - [Odnoklassniki](resource_owners/odnoklassniki.md)
 - [PayPal](resource_owners/paypal.md)
+- [PLIC](resource_owners/plic.md)
 - [QQ](resource_owners/qq.md)
 - [Reddit](resource_owners/reddit.md)
 - [Salesforce](resource_owners/salesforce.md)

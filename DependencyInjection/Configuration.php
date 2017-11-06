@@ -59,6 +59,7 @@ class Configuration implements ConfigurationInterface
             'odnoklassniki',
             'office365',
             'paypal',
+            'plic',
             'qq',
             'reddit',
             'runkeeper',
