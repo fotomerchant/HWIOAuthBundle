@@ -13,10 +13,10 @@ class PLICResourceOwner extends GenericOAuth2ResourceOwner
      * {@inheritDoc}
      */
     protected $paths = array(
-        'identifier' => 'id',
-        'nickname' => 'name',
-        'realname' => 'name',
-        'email' => 'email',
+        'identifier' => 'user.id',
+        'nickname' => 'user.name',
+        'realname' => 'user.name',
+        'email' => 'user.email',
     );
 
     /**
@@ -41,7 +41,6 @@ class PLICResourceOwner extends GenericOAuth2ResourceOwner
     protected function httpRequest($url, $content = null, $headers = array(), $method = null)
     {
         $headers['Accept'] = 'application/vnd.plic.io.v2+json';
-
-        parent::httpRequest($url, $content, $headers, $method);
+        return parent::httpRequest($url, $content, $headers, $method);
     }
 }
