@@ -29,10 +29,22 @@ class PLICResourceOwner extends GenericOAuth2ResourceOwner
         $resolver->setDefaults(array(
             'authorization_url' => 'https://plic.io/oauth/authorize',
             'access_token_url' => 'https://plic.io/oauth/token',
-            'infos_url' => 'https://plic.io/api/users/me.json',
+            'infos_url' => 'https://plic.io/api/users/me',
 
             'use_bearer_authorization' => true,
         ));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getUserInformation(array $accessToken, array $extraParameters = array())
+    {
+        $extraParameters = [
+            'include_licenses[active]' => true
+        ];
+
+        return parent::getUserInformation($accessToken, $extraParameters);
     }
 
     /**
