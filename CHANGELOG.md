@@ -1,15 +1,53 @@
 Changelog
 =========
-## 0.6.3 (2018-xx-xx)
-* Fixed: Vkontakte profile picture path,
-* Fixed: Vkontakte nickname path,
-* Fixed: Content-Length header must be a string,
-* Fixed: upgraded GitLab end point to v4,
-* Fixed: resource owner map parameters must be public,
+## 1.1.0 (2020-04-06)
+* Added Symfony 5 support,
+* Added domain whitelist service to avoid open redirect on `target_path`,
+* Fixed: session service was not injected in `LoginController`,
+* Fixed: missing `setContainer` call to service configuration for `LoginController`,
+* Fixed: client id and client secret must be set in `Auth0ResourceOwner::doGetTokenRequest`,
+* Fixed: missing client id and client secret in `Auth0ResourceOwner`,
+* Twig dependency on `LoginController` is now optional,
+
+## 1.0.0 (2020-01-17)
+* Dropped support for PHP 5.6, 7.0 and 7.1,
+* Dropped support for FOSUserBundle 1.3,
+* Dropped support for Symfony 2.8,
+* Minimum Symfony 3 requirement is 3.4,
+* Minimum Symfony 4 requirement is 4.3,
+* Fixed: WindowsLive Resource Owner token request,
+* Fixed: Update Facebook API to v3.1,
+* Fixed: Update Linkedin API to v2,
+* Fixed: YahooResourceOwner::doGetUserInformationRequest uses wrong arguments,
+* Fixed: Symfony deprecation warning in `symfony/config`,
+* Fixed: SensioConnect now uses new API URLs,
+* Fixed: Do not add Authorization header if no client_secret is present,
+* Fixed: `LoginController::connectAction` should not fail if no token is available,
+* Added: Genius.com resource owner,
+* Added: HTTPlug 2.0 support,
+* Added: Keycloak resource owner,
+* Added: The controller is now available as a service,
+* Added: Allow to use HTTP Basic auth for token request,
+* [BC break] Class `Configuration` has been marked final,
+* [BC break] Class `ConnectController` has been marked final,
+* [BC break] Class `HWIOAuthExtension` has been marked final,
+* [BC break] Class `OAuthExtension` has been marked final,
+* [BC break] Class `SetResourceOwnerServiceNameCompilerPass` has been marked final,
+* [BC break] Class `ConnectController` extends `AbstractController` instead of `Controller`,
+* [BC break] Service `hwi_oauth.http_client` has been marked private,
+* [BC break] Service `hwi_oauth.security.oauth_utils` has been marked private,
+* [BC break] Several service class parameters have been removed,
+
+## 0.6.3 (2018-07-31)
+* Fixed: Vkontakte profile picture & nickname path,
+* Fixed: `Content-Length` header must be a string,
+* Fixed: Upgraded GitLab end point to v4,
+* Fixed: Resource owner map parameters must be public,
 * Fixed: Azure resource owner `infos_url` should not be empty,
-* Fixed: do not start sessions twice,
-* Added: Symfony 4.1 routing files,
-* Added: LinkedIn first- and last names,
+* Fixed: Don't start sessions twice & don't start sessions if already started,
+* Fixed: Updated BitBucket docs,
+* Added: Further compatibility changes for Symfony 4.1,
+* Added: LinkedIn `first-` & `last-` names,
 * Added: Facebook profile picture
 
 ## 0.6.2 (2018-03-28)
